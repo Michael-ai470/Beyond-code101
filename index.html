@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newsletter Sign-Up</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7fff7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .signup-container {
+      background: #0a1128;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      color: #f7fff7;
+      max-width: 400px;
+      width: 100%;
+    }
+    .signup-container h2 {
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #4ecdc4;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input[type="text"], input[type="email"] {
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    input[type="text"] {
+      background: #e0e6ed;
+      color: #0a1128;
+    }
+    input[type="email"] {
+      background: #e0e6ed;
+      color: #0a1128;
+    }
+    button {
+      background: #ff6b6b;
+      border: none;
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #ff4c4c;
+    }
+    .thankyou-message {
+      display: none;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 15px;
+      color: #4ecdc4;
+    }
+  </style>
+</head>
+<body>
+
+<div class="signup-container">
+  <h2>Join the Beyond Code 101 Newsletter</h2>
+  <form id="signup-form" action="https://formspree.io/f/xyzjvklq" method="post">
+    <input type="text" name="name" placeholder="Your name" required />
+    <input type="email" name="email" placeholder="Your email" required />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="thankyou-message" id="thankyou-message">
+    Thanks for subscribing! Stay tuned for updates.
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('signup-form');
+  const thankYouMsg = document.getElementById('thankyou-message');
+
+  form.addEventListener('submit', function(e) {
+   // e.preventDefault();
+    
+    // This is where you'd normally send form data to your backend/email service
+    
+    form.style.display = 'none';
+    thankYouMsg.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
